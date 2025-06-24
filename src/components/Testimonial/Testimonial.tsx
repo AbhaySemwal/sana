@@ -1,57 +1,75 @@
-import React from 'react'
+"use client";
+import React from "react";
 
 const testimonialItems = [
   {
     id: 1,
-    name: 'Emma R.',
-    role: 'Yoga Instructor',
-    testimonial: 'Sana has transformed how I approach my wellness journey. The integrated approach makes everything so much easier.',
-    image: '/emma.jpg', 
+    name: "Emma R.",
+    role: "Yoga Instructor",
+    testimonial:
+      "Sana has transformed how I approach my wellness journey. The integrated approach makes everything so much easier.",
+    image: "/emma.jpg",
   },
   {
     id: 2,
-    name: 'Micahel T.',
-    role: 'Tech Executive',
-    testimonial: 'Being able to consult with specialists and get my prescriptions all in one place has been a game-changer for me.',
-    image: '/michael.png', 
+    name: "Michael T.",
+    role: "Tech Executive",
+    testimonial:
+      "Being able to consult with specialists and get my prescriptions all in one place has been a game-changer for me.",
+    image: "/michael.png",
   },
   {
     id: 3,
-    name: 'Sarah K.',
-    role: 'Marathon Runner',
-    testimonial: 'The personalized wellness plan provided through Sana helped me achieve my health goals faster than I imagined possible.',
-    image: '/sarah.png', 
+    name: "Sarah K.",
+    role: "Marathon Runner",
+    testimonial:
+      "The personalized wellness plan provided through Sana helped me achieve my health goals faster than I imagined possible.",
+    image: "/sarah.png",
   },
-]
+];
+
 const Testimonial = () => {
   return (
-    <div className='bg-[#FBFBFB] py-20 px-10'>
-        <h1 className='text-[#35531C] font-[500] text-[75px] leading-[60px] text-center'>What Our Early Users Say</h1>
-        <div className='flex justify-center mt-24'>
-            <div className='flex gap-5'>
-                {testimonialItems.map((item) => (
-                    <div key={item.id} className='bg-white p-6 shadow-lg rounded-[29px] h-[359px] w-[411px] flex flex-col justify-center gap-8'>
-                        <div className='flex items-center justify-start'>
-                            <img src='/comma.png' alt='comma' className='w-[29px] h-[16px]' />
-                        </div>
-                        <p className='font-[400] text-[20px] leading-[25px]'>{item.testimonial}</p>
-                        <div className='flex items-center gap-4'>
-                            <img src={item.image} alt={item.name} className='w-[82px] h-[82px] rounded-full object-cover' />
-                            <div>
-                                <h3 className='text-[16px] text-[#36541D] font-[400] te'>{item.name}</h3>
-                                <p className='text-[16px] font-[400]'>{item.role}</p>
-                            </div>
-                        </div>
-                        {/* <img src={item.image} alt={item.name} className='w-24 h-24 rounded-full mb-4 mx-auto' />
-                        <h3 className='text-xl font-semibold text-center'>{item.name}</h3>
-                        <p className='text-gray-500 text-center'>{item.role}</p> */}
-                    </div>
-                ))}
+    <div className="bg-[#FAFAFA] py-10 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-12">
+      <h1 className="text-[#35531C] font-medium text-3xl sm:text-4xl lg:text-5xl leading-tight sm:leading-[40px] lg:leading-[60px] text-center mb-8 sm:mb-12 lg:mb-16">
+        What Our Early Users Say
+      </h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {testimonialItems.map((item) => (
+          <div
+            key={item.id}
+            className="bg-white p-4 sm:p-6 lg:p-8 shadow-lg rounded-3xl flex flex-col justify-between gap-4 sm:gap-6 lg:gap-8 w-full"
+          >
+            <div className="flex items-center justify-start">
+              <img
+                src="/comma.png"
+                alt="comma"
+                className="w-5 h-3 sm:w-6 sm:h-4 lg:w-7 lg:h-4"
+              />
             </div>
-
-        </div>
+            <p className="font-normal text-sm sm:text-base lg:text-lg leading-5 sm:leading-6 lg:leading-7">
+              {item.testimonial}
+            </p>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <img
+                src={item.image}
+                alt={item.name}
+                className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-full object-cover"
+              />
+              <div>
+                <h3 className="text-sm sm:text-base lg:text-lg text-[#36541D] font-normal">
+                  {item.name}
+                </h3>
+                <p className="text-xs sm:text-sm lg:text-base font-normal">
+                  {item.role}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonial
+export default Testimonial;

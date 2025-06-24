@@ -7,3 +7,18 @@
 .font-rasa {
   font-family: var(--font-rasa) !important;
 }
+@keyframes scroll {
+  0% {
+    transform: translateX(0)
+  }
+
+  100% {
+    transform: translateX(-100%)
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+  display: flex;
+  white-space: nowrap
+}
